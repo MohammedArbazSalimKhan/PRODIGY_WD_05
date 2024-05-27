@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f0f8ff; /* Light background color */
+  color: #333333; /* Darker text color for readability */
+  overflow-x: hidden;
+}
+
+.container {
+  background: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(224, 255, 255, 0.9)); /* Lighter gradient background */
+  color: #333333;
+  padding: 2rem;
+  width: 40%;
+  margin: 4rem auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.weather__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  border: none;
+  background-color: #ffffff; /* Light background for input */
+  outline: none;
+  padding: 0.5rem 2.5rem;
+  border-radius: 20px;
+  color: #333333; /* Darker text for input */
+  font: inherit;
+  transition: background-color 0.3s;
+}
+
+input::placeholder {
+  color: #666666; /* Softer placeholder color */
+}
+
+input:hover {
+  background-color: #f0f0f0; /* Slightly darker hover state */
+}
+
+.weather__search {
+  position: relative;
+}
+
+.weather__search i {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 20px;
+  color: #333333; /* Darker icon color */
+}
+
+.weather__units {
+  font-size: 1.5rem;
+}
+
+.weather__units span {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.weather__units span:hover {
+  color: #ff6f61; /* Light red for hover */
+}
+
+.weather__units .active {
+  color: #ff6f61; /* Light red for active state */
+}
+
+.weather__body {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.weather__city {
+  font-size: 2.5rem;
+  animation: textGlow 1.5s infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff6f61, 0 0 30px #ff6f61, 0 0 40px #ff6f61;
+  }
+}
+
+.weather__forecast {
+  margin-top: 2rem;
+  font-size: 18px;
+  background: #ffffff; /* Light background for forecast */
+  color: #333333; /* Darker text for forecast */
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.weather__icon img {
+  width: 100px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.weather__temperature {
+  font-size: 2rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.weather__minmax {
+  display: flex;
+  justify-content: center;
+}
+
+.weather__minmax p {
+  margin: 1rem;
+}
+
+.weather__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.weather__card {
+  display: flex;
+  align-items: center;
+  background: #add8e6; /* Light blue background for cards */
+  padding: 1rem;
+  border-radius: 10px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.weather__card i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 1060px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 936px) {
+  .container {
+    width: 90%;
+  }
+
+  .weather__header {
+    flex-direction: column;
+  }
+
+  .weather__units {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .weather__icon {
+    grid-template-columns: none;
+  }
+}
